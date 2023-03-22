@@ -41,13 +41,13 @@ class Map
     end
 
     def key_present?(key)
-        @map.any? { |tuple| tuple[0] = key }
+        @map.any? { |tuple| tuple[0] == key }
     end
 
     def index(key)
         if key_present?(key)
             @map.each_with_index do |tuple, idx|
-                return idx if tuple[0] = key
+                return idx if tuple[0] == key
             end
         end
     end
@@ -56,7 +56,8 @@ class Map
         key_index = index(key)
         if key_index
             tuple = @map[key_index]
-            tuple[1] = value  ###does this work or do I need to do @map[key_index][1]?????
+            # tuple[1] = value  ###does this work or do I need to do @map[key_index][1]?????
+            @map[key_index][1] = value
         else
             @map << [key, value]
         end
@@ -64,7 +65,7 @@ class Map
 
     def get(key)
         key_index = index(key)
-        return @map[key_index][0] if key_index
+        return @map[key_index] if key_index
         nil
     end
 
@@ -81,3 +82,18 @@ class Map
     end
 
 end
+
+
+m = Map.new
+p m.show
+m.set(1, "val")
+p m.show
+m.set(2, "val")
+p m.show
+m.set(3, "what")
+p m.show
+m.set(2, "chungus")
+p m.show
+p m.get(2)
+m.delete(2)
+p m.show
