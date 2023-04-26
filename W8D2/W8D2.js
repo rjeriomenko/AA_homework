@@ -72,10 +72,36 @@ function mysteryScoping5() {
     console.log(x);
 }
 
-mysteryScoping5()
+// mysteryScoping5();
 
 function madLib(verb, adj, noun) {
-    console.log(`We shall ${verb.prototype.toUppperCase} the ${adj} ${noun}.`)
+    console.log(`We shall ${verb.toUpperCase()} the ${adj.toUpperCase()} ${noun.toUpperCase()}.`);
 }
 
-madLib("slam", "silly", "mushroom kingdom")
+madLib("slam", "silly", "mushroom kingdom");
+
+function printSplitStrings(StringOne, StringTwo) {
+    console.log(
+        StringOne = StringOne.split(""),
+        StringTwo = StringTwo.split("")
+    );
+}
+
+printSplitStrings("one", "two");
+
+const isSubString = function(searchString, subString) {
+    let searchArray = searchString.split("");
+    let subArray = subString.split("");
+    let i = 0;
+    let outArray = [];
+    while (i + subArray.length <= searchArray.length) {
+        j = 0;
+        if (searchArray[j] = subArray[j]) {
+            ++j;
+        };
+        ++i;
+    };
+    return outArray
+}
+
+console.log(isSubString("length", "no"))
