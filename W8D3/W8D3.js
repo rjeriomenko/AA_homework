@@ -33,9 +33,32 @@ Elephant.prototype.play = function () {
 }
 
 let kek = new Elephant("Chungus", 9000, ["doing a flip"]);
-kek.trumpet();
-kek.grow();
-console.log(kek.height);
-kek.addTrick("standing on hooves")
-console.log(kek.tricks)
-kek.play()
+// kek.trumpet();
+// kek.grow();
+// console.log(kek.height);
+// kek.addTrick("standing on hooves")
+// console.log(kek.tricks)
+// kek.play()
+
+let ellie = new Elephant("Ellie", 185, ["giving human friends a ride", "playing hide and seek"]);
+let charlie = new Elephant("Charlie", 200, ["painting pictures", "spraying water for a slip and slide"]);
+let kate = new Elephant("Kate", 234, ["writing letters", "stealing peanuts"]);
+let micah = new Elephant("Micah", 143, ["trotting", "playing tic tac toe", "doing elephant ballet"]);
+
+let herd = [kek, ellie, charlie, kate, micah];
+
+Elephant.prototype.paradeHelper = function () {
+    console.log(`${this.name} is galloping by!`)
+}
+
+herd.forEach(function (ele) {
+    ele.paradeHelper();
+})
+
+//Recursion
+
+function range(start, end) {
+    if(start === end) {
+        return
+    }
+}
